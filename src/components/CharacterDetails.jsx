@@ -1,14 +1,27 @@
-function CharacterDetails() {
+import PropTypes from "prop-types";
+import { useParams } from "react-router-dom";
+
+function CharacterDetails({ characters }) {
+  const { idCharacter } = useParams();
+
+  const selectedCharacter = characters.find((character) => {
+    return character.id === parseInt(idCharacter);
+  });
+
   return (
     <section>
-      <img src="" alt="Imagen" />
-      <h4>Nombre</h4>
-      <p>Especie</p>
-      <p>Planeta</p>
-      <p>episodios</p>
-      <p>Vivo o muerto</p>
+      <img src={selectedCharacter.photo} alt={selectedCharacter.name} />
+      <h4>{selectedCharacter.name}</h4>
+      <p>Status: {selectedCharacter.status}</p>
+      <p>Species: {selectedCharacter.species}</p>
+      <p>Origin: {selectedCharacter.planet}</p>
+      <p>Episodies: {selectedCharacter.episodies}</p>
     </section>
   );
 }
 
 export default CharacterDetails;
+
+CharacterDetails.propTypes = {
+  characters: PropTypes.array.isRequired,
+};

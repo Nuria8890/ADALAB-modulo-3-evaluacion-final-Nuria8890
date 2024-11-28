@@ -59,7 +59,7 @@ function App() {
 
           <Route
             path="/characters/:idCharacter"
-            element={<CharacterDetails />}
+            element={<CharacterDetails characters={filteredCharacters} />}
           />
         </Routes>
       </main>

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
-import "../styles/layout/CharacterDetails.scss";
+import "../../styles/layout/CharacterDetails.scss";
 import { PiAlienFill } from "react-icons/pi";
 import { RxAvatar } from "react-icons/rx";
 import { FaHeartPulse } from "react-icons/fa6";

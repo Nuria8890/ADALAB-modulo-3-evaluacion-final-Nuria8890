@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./Header";
 import Filters from "./Filters/Filters";
-import CharacterList from "./CharacterList";
-import CharacterDetails from "./CharacterDetails";
+import CharacterList from "./List/CharacterList";
+import CharacterDetails from "./List/CharacterDetails";
 import NotFoundCharacter from "./NotFoundCharacter";
 import NotFoundParagraph from "./NotFoundParagraph";
 
@@ -39,6 +39,7 @@ function App() {
 
   const clickReset = () => {
     setFilterName("");
+    setFilterSpecie("");
   };
 
   // useEffect

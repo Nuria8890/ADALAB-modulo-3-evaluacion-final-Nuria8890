@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import "../styles/layout/CharacterList.scss";
+import "../../styles/layout/CharacterList.scss";
 
 function CharacterCard({ character }) {
   return (

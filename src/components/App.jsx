@@ -1,6 +1,6 @@
 import "../styles/App.scss";
 import callToApi from "../services/api";
-// import localStorage from "../services/localStorage";
+import localStorage from "../services/localStorage";
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import logo from "../images/logoRaM.jpg";
@@ -11,7 +11,9 @@ import CharacterDetails from "./CharacterDetails";
 function App() {
   // States
   const [characters, setCharacters] = useState([]);
-  const [filterName, setFilterName] = useState("");
+  const [filterName, setFilterName] = useState(
+    localStorage.get("searchName", "")
+  );
 
   // useEffect
   useEffect(() => {
@@ -20,12 +22,11 @@ function App() {
     });
   }, []);
 
-  // useEffect(() => {
-  // localStorage.set("variable", variable);
+  useEffect(() => {
+    localStorage.set("searchName", filterName);
 
-  // Este useEffect solo se ejecutará cuando cambie la variable
-  // console.log("Ha cambiado la variable");
-  // }, [variable]);
+    console.log("Ha cambiado la variable");
+  }, [filterName]);
 
   // Events
   const changeInputValue = (value) => {
@@ -48,7 +49,10 @@ function App() {
             path="/"
             element={
               <>
-                <Filters onChangeInput={changeInputValue} />
+                <Filters
+                  onChangeInput={changeInputValue}
+                  filterName={filterName}
+                />
                 <CharacterList characters={filteredCharacters} />
               </>
             }

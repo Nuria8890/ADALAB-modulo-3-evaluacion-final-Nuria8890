@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Form({ onChangeInput }) {
+function Filters({ onChangeInput }) {
   const handleChangeInput = (event) => {
     onChangeInput(event.target.value);
   };
@@ -17,8 +17,8 @@ function Form({ onChangeInput }) {
   );
 }
 
-export default Form;
+export default Filters;
 
-Form.propTypes = {
+Filters.propTypes = {
   onChangeInput: PropTypes.func.isRequired,
 };

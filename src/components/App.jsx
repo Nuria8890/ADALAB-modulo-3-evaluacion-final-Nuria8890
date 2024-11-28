@@ -3,7 +3,7 @@ import callToApi from "../services/api";
 import localStorage from "../services/localStorage";
 import { useState, useEffect } from "react";
 // import { Link, Route, Routes } from "react-router-dom";
-import Form from "./Form";
+import Filters from "./Filters";
 
 function App() {
   // Estados
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <>
-      <Form onChangeInput={changeInputValue} />
+      <Filters onChangeInput={changeInputValue} />
     </>
   );
 }

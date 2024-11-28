@@ -4,6 +4,12 @@ function FilterByName({ onChangeInput }) {
   const handleChangeInput = (event) => {
     onChangeInput(event.target.value);
   };
+
+  const handleKeyDownInput = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+    }
+  };
   return (
     <>
       <label htmlFor="search">Buscar: </label>
@@ -12,6 +18,7 @@ function FilterByName({ onChangeInput }) {
         name="search"
         id="search"
         onChange={handleChangeInput}
+        onKeyDown={handleKeyDownInput}
       />
     </>
   );

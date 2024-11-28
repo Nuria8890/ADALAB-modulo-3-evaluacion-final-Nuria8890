@@ -30,7 +30,6 @@ function App() {
   // Events
   const changeInputValue = (value) => {
     setFilterName(value);
-    console.log("filterName", filterName);
   };
 
   // Functions

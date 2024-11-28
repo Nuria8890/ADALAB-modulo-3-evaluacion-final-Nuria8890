@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 
-function Filters({ onChangeInput }) {
+function FilterByName({ onChangeInput }) {
   const handleChangeInput = (event) => {
     onChangeInput(event.target.value);
   };
   return (
-    <form>
+    <>
       <label htmlFor="search">Buscar: </label>
       <input
         type="text"
@@ -13,12 +13,12 @@ function Filters({ onChangeInput }) {
         id="search"
         onChange={handleChangeInput}
       />
-    </form>
+    </>
   );
 }
 
-export default Filters;
+export default FilterByName;
 
-Filters.propTypes = {
+FilterByName.propTypes = {
   onChangeInput: PropTypes.func.isRequired,
 };

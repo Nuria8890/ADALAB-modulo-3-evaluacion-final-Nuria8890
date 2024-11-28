@@ -1,9 +1,29 @@
 .filters {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
   width: 100%;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+  @media (min-width: 1280px) {
+    gap: 50px;
+  }
+  &__buton-name {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+    @media (min-width: 1280px) {
+      gap: 50px;
+    }
+  }
 
   &__byName {
     color: white;
@@ -12,6 +32,9 @@
     padding: 5px;
   }
   &__bySpecie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     h4 {
       margin-bottom: 5px;
     }

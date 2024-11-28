@@ -19,6 +19,7 @@ function FilterByName({ onChangeInputName, filterName }) {
           type="text"
           name="search"
           id="search"
+          placeholder="busca un personaje"
           onChange={handleChangeInput}
           onKeyDown={handleKeyDownInput}
           value={filterName}

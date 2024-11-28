@@ -12,12 +12,14 @@ function Filters({
 }) {
   return (
     <form className="filters">
-      <ResetButton onClickReset={onClickReset} />
+      <div className="filters__buton-name">
+        <ResetButton onClickReset={onClickReset} />
 
-      <FilterByName
-        onChangeInputName={onChangeInputName}
-        filterName={filterName}
-      />
+        <FilterByName
+          onChangeInputName={onChangeInputName}
+          filterName={filterName}
+        />
+      </div>
       <FilterBySpecie onChangeInputSpecie={onChangeInputSpecie} />
     </form>
   );

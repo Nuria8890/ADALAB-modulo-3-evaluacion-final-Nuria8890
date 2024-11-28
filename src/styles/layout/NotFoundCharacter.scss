@@ -1,0 +1,11 @@
+.notFoundCharacter {
+  &__text {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  &__return {
+    display: flex;
+    justify-content: center;
+  }
+}

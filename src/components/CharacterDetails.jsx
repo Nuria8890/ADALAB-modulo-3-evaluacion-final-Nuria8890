@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../styles/layout/CharacterDetails.scss";
 // import { library } from "@fortawesome/fontawesome-svg-core";
 // import { all } from "@awesome.me/kit-KIT_CODE/icons";

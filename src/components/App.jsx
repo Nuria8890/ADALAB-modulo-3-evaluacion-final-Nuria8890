@@ -7,6 +7,7 @@ import Header from "./Header";
 import Filters from "./Filters/Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetails from "./CharacterDetails";
+import NotFoundCharacter from "./NotFoundCharacter";
 
 function App() {
   // States
@@ -82,6 +83,8 @@ function App() {
             path="/characters/:idCharacter"
             element={<CharacterDetails characters={filteredCharacters} />}
           />
+
+          <Route path="*" element={<NotFoundCharacter />} />
         </Routes>
       </main>
     </>

@@ -8,6 +8,7 @@ import Filters from "./Filters/Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetails from "./CharacterDetails";
 import NotFoundCharacter from "./NotFoundCharacter";
+import NotFoundParagraph from "./NotFoundParagraph";
 
 function App() {
   // States
@@ -16,6 +17,25 @@ function App() {
     localStorage.get("searchName", "")
   );
   const [filterSpecie, setFilterSpecie] = useState("");
+
+  // Events
+  const changeInputNameValue = (value) => {
+    setFilterName(value);
+  };
+
+  const changeInputSpecie = (value) => {
+    setFilterSpecie(value);
+  };
+
+  // Functions
+
+  const filteredCharacters = characters
+    .filter((character) => {
+      return character.name.toLowerCase().includes(filterName.toLowerCase());
+    })
+    .filter((character) => {
+      return filterSpecie === "" ? true : character.species === filterSpecie;
+    });
 
   // useEffect
   useEffect(() => {
@@ -35,51 +55,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    localStorage.set("searchName", filterName);
-  }, [filterName]);
-
-  // Events
-  const changeInputNameValue = (value) => {
-    setFilterName(value);
-
-    //   const characterName = characters.map((character) => {
-    //     return character.name;
-    //   });
-    //   console.log("characterName", characterName);
-    //   console.log(
-    //     "characterName.map()",
-    //     characterName.map((name) => {
-    //       return name.includes(value);
-    //     })
-    //   );
-
-    //   if (
-    //     characterName.map((name) => {
-    //       return name.includes(value);
-    //     })
-    //   ) {
-    //     console.log("Ese nombre existe");
-    //     return setFilterName(value);
-    //   } else {
-    //     console.log(
-    //       `No hay ningún personaje que coincida con la palabra ${value}`
-    //     );
-    //   }
-  };
-
-  const changeInputSpecie = (value) => {
-    setFilterSpecie(value);
-  };
-
-  // Functions
-
-  const filteredCharacters = characters
-    .filter((character) => {
-      return character.name.toLowerCase().includes(filterName.toLowerCase());
-    })
-    .filter((character) => {
-      return filterSpecie === "" ? true : character.species === filterSpecie;
-    });
+    if (filteredCharacters.length > 0) {
+      localStorage.set("searchName", filterName);
+    }
+  }, [filterName, filteredCharacters]);
 
   return (
     <>
@@ -96,6 +75,10 @@ function App() {
                   onChangeInputSpecie={changeInputSpecie}
                 />
                 <CharacterList characters={filteredCharacters} />
+                <NotFoundParagraph
+                  characters={filteredCharacters.length}
+                  filterName={filterName}
+                />
               </>
             }
           />

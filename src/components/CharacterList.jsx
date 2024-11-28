@@ -6,6 +6,7 @@ function CharacterList({ characters }) {
   const charactersItem = characters.map((character) => {
     return <CharacterCard key={character.id} character={character} />;
   });
+
   return (
     <section className="containerList">
       <ul className="list">{charactersItem}</ul>

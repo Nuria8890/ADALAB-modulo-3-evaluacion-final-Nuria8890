@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import "../styles/layout/CharacterDetails.scss";
-// import { library } from "@fortawesome/fontawesome-svg-core";
-// import { all } from "@awesome.me/kit-KIT_CODE/icons";
-// library.add(...all);
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { PiAlienFill } from "react-icons/pi";
+import { RxAvatar } from "react-icons/rx";
+import { FaHeartPulse } from "react-icons/fa6";
+import { FaSkullCrossbones } from "react-icons/fa";
+import { GrStatusUnknown } from "react-icons/gr";
 
 function CharacterDetails({ characters }) {
   const { idCharacter } = useParams();
@@ -12,6 +13,16 @@ function CharacterDetails({ characters }) {
   const selectedCharacter = characters.find((character) => {
     return character.id === parseInt(idCharacter);
   });
+
+  let status;
+
+  if (selectedCharacter.status === "Dead") {
+    status = <FaSkullCrossbones />;
+  } else if (selectedCharacter.status === "Alive") {
+    status = <FaHeartPulse />;
+  } else {
+    status = <GrStatusUnknown />;
+  }
 
   return (
     <>
@@ -26,14 +37,23 @@ function CharacterDetails({ characters }) {
           <div className="details__text">
             <h3>{selectedCharacter.name}</h3>
             <p>
-              <b>Status</b>: {selectedCharacter.status}
+              <b>Status</b>:{status}
             </p>
             <p>
-              <b>Species</b>: {selectedCharacter.species}
-              {/* <FontAwesomeIcon icon="fa-brands fa-reddit-alien" /> */}
+              <b>Species</b>:{" "}
+              {selectedCharacter.species === "Alien" ? (
+                <PiAlienFill />
+              ) : (
+                <RxAvatar />
+              )}
             </p>
             <p>
-              <b>Origin</b>: {selectedCharacter.planet}
+              <b>Origin</b>:{" "}
+              {selectedCharacter.planet === "unknown" ? (
+                <GrStatusUnknown />
+              ) : (
+                selectedCharacter.planet
+              )}
             </p>
             <p>
               <b>Episodies</b>: {selectedCharacter.episodies}

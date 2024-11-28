@@ -2,9 +2,11 @@ import "../styles/App.scss";
 import callToApi from "../services/api";
 // import localStorage from "../services/localStorage";
 import { useState, useEffect } from "react";
-// import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import logo from "../images/logoRaM.jpg";
 import Filters from "./Filters/Filters";
 import CharacterList from "./CharacterList";
+import CharacterDetails from "./CharacterDetails";
 
 function App() {
   // States
@@ -40,8 +42,27 @@ function App() {
 
   return (
     <>
-      <Filters onChangeInput={changeInputValue} />
-      <CharacterList characters={filteredCharacters} />
+      <header>
+        <img src={logo} alt="logo Rick and Morty" />
+      </header>
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Filters onChangeInput={changeInputValue} />
+                <CharacterList characters={filteredCharacters} />
+              </>
+            }
+          />
+
+          <Route
+            path="/characters/:idCharacter"
+            element={<CharacterDetails />}
+          />
+        </Routes>
+      </main>
     </>
   );
 }

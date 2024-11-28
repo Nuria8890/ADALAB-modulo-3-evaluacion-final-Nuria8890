@@ -1,1 +1,0 @@
-*{box-sizing:border-box;margin:0;padding:0}ul{list-style:none}a{text-decoration:none;color:#000}button{border:none;width:fit-content;cursor:pointer}fieldset{border:0}input,label{align-self:self-start}#root{display:grid;min-height:100dvh;grid-template-rows:auto 1fr auto}

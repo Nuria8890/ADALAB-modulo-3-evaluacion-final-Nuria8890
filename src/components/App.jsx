@@ -17,6 +17,7 @@ function App() {
     localStorage.get("searchName", "")
   );
   const [filterSpecie, setFilterSpecie] = useState("");
+  const [filterStatus, setFilterStatus] = useState("");
 
   // Events
   const changeInputNameValue = (value) => {
@@ -27,6 +28,10 @@ function App() {
     setFilterSpecie(value);
   };
 
+  const onChangeInputStatus = (value) => {
+    setFilterStatus(value);
+  };
+
   // Functions
 
   const filteredCharacters = characters
@@ -35,11 +40,15 @@ function App() {
     })
     .filter((character) => {
       return filterSpecie === "" ? true : character.species === filterSpecie;
+    })
+    .filter((character) => {
+      return filterStatus === "" ? true : character.status === filterStatus;
     });
 
   const clickReset = () => {
     setFilterName("");
     setFilterSpecie("");
+    setFilterStatus("");
   };
 
   // useEffect
@@ -79,6 +88,7 @@ function App() {
                   filterName={filterName}
                   onChangeInputSpecie={changeInputSpecie}
                   onClickReset={clickReset}
+                  onChangeInputStatus={onChangeInputStatus}
                 />
                 <CharacterList characters={filteredCharacters} />
                 <NotFoundParagraph

@@ -3,12 +3,14 @@ import FilterByName from "./FilterByName";
 import FilterBySpecie from "./FilterBySpecie";
 import "../../styles/layout/Filters.scss";
 import ResetButton from "../ResetButton";
+import FilterByStatus from "./FilterByStatus";
 
 function Filters({
   onChangeInputName,
   filterName,
   onChangeInputSpecie,
   onClickReset,
+  onChangeInputStatus,
 }) {
   return (
     <form className="filters">
@@ -21,6 +23,8 @@ function Filters({
         />
       </div>
       <FilterBySpecie onChangeInputSpecie={onChangeInputSpecie} />
+
+      <FilterByStatus onChangeInputStatus={onChangeInputStatus} />
     </form>
   );
 }
@@ -32,4 +36,5 @@ Filters.propTypes = {
   filterName: PropTypes.string.isRequired,
   onChangeInputSpecie: PropTypes.func.isRequired,
   onClickReset: PropTypes.func.isRequired,
+  onChangeInputStatus: PropTypes.func.isRequired,
 };

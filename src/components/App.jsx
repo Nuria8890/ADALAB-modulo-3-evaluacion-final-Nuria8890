@@ -24,13 +24,35 @@ function App() {
 
   useEffect(() => {
     localStorage.set("searchName", filterName);
-
-    console.log("Ha cambiado la variable");
   }, [filterName]);
 
   // Events
   const changeInputValue = (value) => {
     setFilterName(value);
+
+    //   const characterName = characters.map((character) => {
+    //     return character.name;
+    //   });
+    //   console.log("characterName", characterName);
+    //   console.log(
+    //     "characterName.map()",
+    //     characterName.map((name) => {
+    //       return name.includes(value);
+    //     })
+    //   );
+
+    //   if (
+    //     characterName.map((name) => {
+    //       return name.includes(value);
+    //     })
+    //   ) {
+    //     console.log("Ese nombre existe");
+    //     return setFilterName(value);
+    //   } else {
+    //     console.log(
+    //       `No hay ningún personaje que coincida con la palabra ${value}`
+    //     );
+    //   }
   };
 
   // Functions

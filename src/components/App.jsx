@@ -38,7 +38,7 @@ function App() {
   }, [filterName]);
 
   // Events
-  const changeInputValue = (value) => {
+  const changeInputNameValue = (value) => {
     setFilterName(value);
 
     //   const characterName = characters.map((character) => {
@@ -66,6 +66,9 @@ function App() {
     //   }
   };
 
+  const changeInputSpecie = (value) => {
+    console.log("specie", value);
+  };
   // Functions
 
   const filteredCharacters = characters.filter((character) => {
@@ -82,8 +85,9 @@ function App() {
             element={
               <>
                 <Filters
-                  onChangeInput={changeInputValue}
+                  onChangeInputName={changeInputNameValue}
                   filterName={filterName}
+                  onChangeInputSpecie={changeInputSpecie}
                 />
                 <CharacterList characters={filteredCharacters} />
               </>

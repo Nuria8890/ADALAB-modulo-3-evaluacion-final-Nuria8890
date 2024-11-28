@@ -3,11 +3,14 @@ import FilterByName from "./FilterByName";
 import FilterBySpecie from "./FilterBySpecie";
 import "../../styles/layout/Filters.scss";
 
-function Filters({ onChangeInput, filterName }) {
+function Filters({ onChangeInputName, filterName, onChangeInputSpecie }) {
   return (
     <form className="filters">
-      <FilterByName onChangeInput={onChangeInput} filterName={filterName} />
-      <FilterBySpecie />
+      <FilterByName
+        onChangeInputName={onChangeInputName}
+        filterName={filterName}
+      />
+      <FilterBySpecie onChangeInputSpecie={onChangeInputSpecie} />
     </form>
   );
 }
@@ -15,6 +18,7 @@ function Filters({ onChangeInput, filterName }) {
 export default Filters;
 
 Filters.propTypes = {
-  onChangeInput: PropTypes.func.isRequired,
+  onChangeInputName: PropTypes.func.isRequired,
   filterName: PropTypes.string.isRequired,
+  onChangeInputSpecie: PropTypes.func.isRequired,
 };

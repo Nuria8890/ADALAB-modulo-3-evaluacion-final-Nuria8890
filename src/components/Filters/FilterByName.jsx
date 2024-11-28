@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import "../../styles/layout/Filters.scss";
 
-function FilterByName({ onChangeInput, filterName }) {
+function FilterByName({ onChangeInputName, filterName }) {
   const handleChangeInput = (event) => {
-    onChangeInput(event.target.value);
+    onChangeInputName(event.target.value);
   };
 
   const handleKeyDownInput = (event) => {
@@ -31,6 +31,6 @@ function FilterByName({ onChangeInput, filterName }) {
 export default FilterByName;
 
 FilterByName.propTypes = {
-  onChangeInput: PropTypes.func.isRequired,
+  onChangeInputName: PropTypes.func.isRequired,
   filterName: PropTypes.string.isRequired,
 };

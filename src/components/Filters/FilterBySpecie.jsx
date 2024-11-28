@@ -1,16 +1,34 @@
 import "../../styles/layout/Filters.scss";
+import PropTypes from "prop-types";
 
-function FilterBySpecie() {
+function FilterBySpecie({ onChangeInputSpecie }) {
+  const handleChange = (event) => {
+    onChangeInputSpecie(event.target.value);
+  };
   return (
     <div className="filters__bySpecie">
       <h4>Especie</h4>
       <div className="filters__bySpecie__inputs">
         <label>
-          Human <input type="radio" id="human" name="specie" value="human" />
+          Human{" "}
+          <input
+            type="radio"
+            id="human"
+            name="specie"
+            value="human"
+            onChange={handleChange}
+          />
         </label>
 
         <label>
-          Alien <input type="radio" id="alien" name="specie" value="alien" />
+          Alien{" "}
+          <input
+            type="radio"
+            id="alien"
+            name="specie"
+            value="alien"
+            onChange={handleChange}
+          />
         </label>
       </div>
     </div>
@@ -18,3 +36,7 @@ function FilterBySpecie() {
 }
 
 export default FilterBySpecie;
+
+FilterBySpecie.propTypes = {
+  onChangeInputSpecie: PropTypes.func.isRequired,
+};

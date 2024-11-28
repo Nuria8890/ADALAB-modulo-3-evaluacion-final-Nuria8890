@@ -1,5 +1,7 @@
 import "../../styles/layout/Filters.scss";
 import PropTypes from "prop-types";
+import { PiAlienFill } from "react-icons/pi";
+import { RxAvatar } from "react-icons/rx";
 
 function FilterBySpecie({ onChangeInputSpecie }) {
   const handleChange = (event) => {
@@ -10,7 +12,7 @@ function FilterBySpecie({ onChangeInputSpecie }) {
       <h4>Especie</h4>
       <div className="filters__bySpecie__inputs">
         <label>
-          Human{" "}
+          <RxAvatar /> Humano{" "}
           <input
             type="radio"
             id="human"
@@ -21,7 +23,7 @@ function FilterBySpecie({ onChangeInputSpecie }) {
         </label>
 
         <label>
-          Alien{" "}
+          <PiAlienFill /> Alien{" "}
           <input
             type="radio"
             id="alien"

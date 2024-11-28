@@ -34,9 +34,7 @@ function App() {
 
   // Functions
   const filteredCharacters = characters.filter((character) => {
-    return character.name
-      .toLowerCase()
-      .includes(filterName.toLocaleLowerCase());
+    return character.name.toLowerCase().includes(filterName.toLowerCase());
   });
 
   return (

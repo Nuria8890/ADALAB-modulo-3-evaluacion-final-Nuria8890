@@ -1,11 +1,12 @@
 import "../styles/layout/NotFoundCharacter.scss";
 import { Link } from "react-router-dom";
-import NotFoundParagraph from "./NotFoundParagraph";
 
 function NotFoundCharacter() {
   return (
     <>
-      <NotFoundParagraph />
+      <p className="notFoundCharacter__text">
+        El personaje que buscas no existe
+      </p>
       <Link to={"/"} className="notFoundCharacter__return">
         {" "}
         <p>&lt; Volver</p>

@@ -6,6 +6,7 @@ import { RxAvatar } from "react-icons/rx";
 import { FaHeartPulse } from "react-icons/fa6";
 import { FaSkullCrossbones } from "react-icons/fa";
 import { GrStatusUnknown } from "react-icons/gr";
+import NotFoundCharacter from "../NotFoundCharacter";
 
 function CharacterDetails({ characters }) {
   // ¿¿Esta lógica la hago aquí??
@@ -14,6 +15,10 @@ function CharacterDetails({ characters }) {
   const selectedCharacter = characters.find((character) => {
     return character.id === parseInt(idCharacter);
   });
+
+  if (selectedCharacter === undefined) {
+    return <NotFoundCharacter />;
+  }
 
   // ¿¿Esta lógica la hago aquí??
   let status;

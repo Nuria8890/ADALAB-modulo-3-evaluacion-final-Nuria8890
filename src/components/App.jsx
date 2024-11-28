@@ -19,7 +19,17 @@ function App() {
   // useEffect
   useEffect(() => {
     callToApi().then((response) => {
-      setCharacters(response);
+      const orderedCharacters = [...response].sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      setCharacters(orderedCharacters);
     });
   }, []);
 
@@ -57,6 +67,7 @@ function App() {
   };
 
   // Functions
+
   const filteredCharacters = characters.filter((character) => {
     return character.name.toLowerCase().includes(filterName.toLowerCase());
   });

@@ -14,8 +14,9 @@ function CharacterDetails({ characters }) {
     <>
       <Link to={"/"} className="details__p">
         {" "}
-        <i class="fa-solid fa-less-than details__p__icon"></i> Volver
+        <p>&lt; Volver</p>
       </Link>
+
       <section className="containerDetails">
         <div className="details">
           <img src={selectedCharacter.photo} alt={selectedCharacter.name} />

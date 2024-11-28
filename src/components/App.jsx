@@ -78,6 +78,7 @@ function App() {
                   onChangeInputName={changeInputNameValue}
                   filterName={filterName}
                   onChangeInputSpecie={changeInputSpecie}
+                  onClickReset={clickReset}
                 />
                 <CharacterList characters={filteredCharacters} />
                 <NotFoundParagraph

@@ -8,12 +8,14 @@ import { FaSkullCrossbones } from "react-icons/fa";
 import { GrStatusUnknown } from "react-icons/gr";
 
 function CharacterDetails({ characters }) {
+  // ¿¿Esta lógica la hago aquí??
   const { idCharacter } = useParams();
 
   const selectedCharacter = characters.find((character) => {
     return character.id === parseInt(idCharacter);
   });
 
+  // ¿¿Esta lógica la hago aquí??
   let status;
 
   if (selectedCharacter.status === "Dead") {

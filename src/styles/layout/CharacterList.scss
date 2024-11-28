@@ -10,6 +10,17 @@
 
   &__item {
     background-color: #07b0c7;
+    width: 150px;
+    @media (min-width: 768px) {
+      width: 220px;
+    }
+    @media (min-width: 1280px) {
+      width: 330px;
+    }
+
+    img {
+      width: 100%;
+    }
     &__text {
       display: flex;
       flex-direction: column;

@@ -3,7 +3,7 @@ import callToApi from "../services/api";
 import localStorage from "../services/localStorage";
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import logo from "../images/logoRaM.jpg";
+import Header from "./Header";
 import Filters from "./Filters/Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetails from "./CharacterDetails";
@@ -62,9 +62,7 @@ function App() {
 
   return (
     <>
-      <header>
-        <img src={logo} alt="logo Rick and Morty" />
-      </header>
+      <Header />
       <main>
         <Routes>
           <Route

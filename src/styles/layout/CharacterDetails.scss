@@ -1,0 +1,14 @@
+.containerDetails {
+  display: flex;
+  justify-content: center;
+}
+.details {
+  background-color: #07b0c7;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__text {
+    padding: 20px;
+  }
+}

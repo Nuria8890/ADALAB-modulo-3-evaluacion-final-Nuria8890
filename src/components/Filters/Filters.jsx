@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import FilterByName from "./FilterByName";
+import "../../styles/layout/Filters.scss";
 
 function Filters({ onChangeInput, filterName }) {
   return (
-    <form>
+    <form className="filters">
       <FilterByName onChangeInput={onChangeInput} filterName={filterName} />
     </form>
   );

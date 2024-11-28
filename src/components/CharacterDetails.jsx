@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
+import "../styles/layout/CharacterDetails.scss";
 
 function CharacterDetails({ characters }) {
   const { idCharacter } = useParams();
@@ -9,13 +10,25 @@ function CharacterDetails({ characters }) {
   });
 
   return (
-    <section>
-      <img src={selectedCharacter.photo} alt={selectedCharacter.name} />
-      <h4>{selectedCharacter.name}</h4>
-      <p>Status: {selectedCharacter.status}</p>
-      <p>Species: {selectedCharacter.species}</p>
-      <p>Origin: {selectedCharacter.planet}</p>
-      <p>Episodies: {selectedCharacter.episodies}</p>
+    <section className="containerDetails">
+      <div className="details">
+        <img src={selectedCharacter.photo} alt={selectedCharacter.name} />
+        <div className="details__text">
+          <h3>{selectedCharacter.name}</h3>
+          <p>
+            <b>Status</b>: {selectedCharacter.status}
+          </p>
+          <p>
+            <b>Species</b>: {selectedCharacter.species}
+          </p>
+          <p>
+            <b>Origin</b>: {selectedCharacter.planet}
+          </p>
+          <p>
+            <b>Episodies</b>: {selectedCharacter.episodies}
+          </p>
+        </div>
+      </div>
     </section>
   );
 }

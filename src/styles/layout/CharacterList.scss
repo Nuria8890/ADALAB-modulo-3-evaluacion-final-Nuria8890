@@ -1,0 +1,20 @@
+.containerList {
+  margin-top: 20px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+
+  &__item {
+    background-color: #07b0c7;
+    &__text {
+      display: flex;
+      flex-direction: column;
+      padding: 7px;
+      gap: 5px;
+    }
+  }
+}

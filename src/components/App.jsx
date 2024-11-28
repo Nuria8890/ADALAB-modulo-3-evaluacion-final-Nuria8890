@@ -15,6 +15,7 @@ function App() {
   const [filterName, setFilterName] = useState(
     localStorage.get("searchName", "")
   );
+  const [filterSpecie, setFilterSpecie] = useState("");
 
   // useEffect
   useEffect(() => {
@@ -67,13 +68,18 @@ function App() {
   };
 
   const changeInputSpecie = (value) => {
-    console.log("specie", value);
+    setFilterSpecie(value);
   };
+
   // Functions
 
-  const filteredCharacters = characters.filter((character) => {
-    return character.name.toLowerCase().includes(filterName.toLowerCase());
-  });
+  const filteredCharacters = characters
+    .filter((character) => {
+      return character.name.toLowerCase().includes(filterName.toLowerCase());
+    })
+    .filter((character) => {
+      return filterSpecie === "" ? true : character.species === filterSpecie;
+    });
 
   return (
     <>

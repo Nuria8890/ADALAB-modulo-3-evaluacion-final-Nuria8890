@@ -15,7 +15,7 @@ function FilterBySpecie({ onChangeInputSpecie }) {
             type="radio"
             id="human"
             name="specie"
-            value="human"
+            value="Human"
             onChange={handleChange}
           />
         </label>
@@ -26,7 +26,7 @@ function FilterBySpecie({ onChangeInputSpecie }) {
             type="radio"
             id="alien"
             name="specie"
-            value="alien"
+            value="Alien"
             onChange={handleChange}
           />
         </label>

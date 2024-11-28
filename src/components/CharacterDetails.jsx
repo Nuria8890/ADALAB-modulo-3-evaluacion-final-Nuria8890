@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/layout/CharacterDetails.scss";
 
 function CharacterDetails({ characters }) {
@@ -11,10 +12,10 @@ function CharacterDetails({ characters }) {
 
   return (
     <>
-      <p className="details__p">
+      <Link to={"/"} className="details__p">
         {" "}
         <i class="fa-solid fa-less-than details__p__icon"></i> Volver
-      </p>
+      </Link>
       <section className="containerDetails">
         <div className="details">
           <img src={selectedCharacter.photo} alt={selectedCharacter.name} />

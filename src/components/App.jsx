@@ -37,6 +37,10 @@ function App() {
       return filterSpecie === "" ? true : character.species === filterSpecie;
     });
 
+  const clickReset = () => {
+    setFilterName("");
+  };
+
   // useEffect
   useEffect(() => {
     callToApi().then((response) => {
@@ -78,6 +82,7 @@ function App() {
                 <NotFoundParagraph
                   characters={filteredCharacters.length}
                   filterName={filterName}
+                  onClickReset={clickReset}
                 />
               </>
             }

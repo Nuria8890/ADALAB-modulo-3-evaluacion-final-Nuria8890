@@ -8,4 +8,14 @@
     display: flex;
     justify-content: center;
   }
+  &__resetButton {
+    display: flex;
+    justify-content: center;
+    button {
+      padding: 8px;
+      border-radius: 5px;
+      background-color: #07b0c7;
+      font-weight: 800;
+    }
+  }
 }

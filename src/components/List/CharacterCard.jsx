@@ -9,7 +9,7 @@ function CharacterCard({ character }) {
         <img src={character.photo} alt={character.name} />
         <div className="list__item__text">
           <h4>{character.name}</h4>
-          <p>{character.species}</p>
+          <p>{character.species === "Human" ? "Humano" : character.species}</p>
         </div>
       </Link>
     </li>

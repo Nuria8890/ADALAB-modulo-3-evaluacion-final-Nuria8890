@@ -25,24 +25,14 @@ function CharacterDetails({ characters }) {
     return <NotFoundCharacter />;
   }
 
+  let status;
+
   if (selectedCharacter.status === "Dead") {
-    selectedCharacter.status = (
-      <span>
-        Muerto <FaSkullCrossbones />
-      </span>
-    );
+    status = <FaSkullCrossbones />;
   } else if (selectedCharacter.status === "Alive") {
-    selectedCharacter.status = (
-      <span>
-        Muerto <FaHeartPulse />
-      </span>
-    );
+    status = <FaHeartPulse />;
   } else {
-    selectedCharacter.status = (
-      <span>
-        Desconocido <GrStatusUnknown />
-      </span>
-    );
+    status = <GrStatusUnknown />;
   }
 
   return (
@@ -58,18 +48,14 @@ function CharacterDetails({ characters }) {
           <div className="details__text">
             <h3>{selectedCharacter.name}</h3>
             <p>
-              <b>Estado</b>: {selectedCharacter.status}
+              <b>Estado</b>: {status}
             </p>
             <p>
               <b>Especie</b>:{" "}
               {selectedCharacter.species === "Alien" ? (
-                <span>
-                  Alien <PiAlienFill />
-                </span>
+                <PiAlienFill />
               ) : (
-                <span>
-                  Humano <RxAvatar />
-                </span>
+                <RxAvatar />
               )}
             </p>
             <p>

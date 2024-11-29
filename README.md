@@ -1,3 +1,9 @@
+**Hola!!**
+
+Aquí te presento una página web donde puedes buscar personajes de la serie Rick and Morty. Puedes filtrarlos por nombre, especie y estado.
+
+Es la evaluación final del módulo 3 que he hecho en Adalab, después de casi dos semanas aprendiendo React.
+
 ## Guía de visualización de la página web:
 
 ### Si quieres ver la web desde GitHub:

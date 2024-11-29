@@ -14,7 +14,7 @@ function App() {
   // States
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState(
-    localStorage.get("searchName", "")
+    localStorage.get("searchName", ""),
   );
   const [filterSpecie, setFilterSpecie] = useState("");
   const [filterStatus, setFilterStatus] = useState("");

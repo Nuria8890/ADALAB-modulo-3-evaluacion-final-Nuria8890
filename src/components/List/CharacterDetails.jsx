@@ -28,11 +28,37 @@ function CharacterDetails({ characters }) {
   let status;
 
   if (selectedCharacter.status === "Dead") {
-    status = <FaSkullCrossbones />;
+    status = (
+      <span>
+        Muerto <FaSkullCrossbones />
+      </span>
+    );
   } else if (selectedCharacter.status === "Alive") {
-    status = <FaHeartPulse />;
+    status = (
+      <span>
+        Vivo <FaHeartPulse />
+      </span>
+    );
   } else {
-    status = <GrStatusUnknown />;
+    status = (
+      <span>
+        Desconocido <GrStatusUnknown />
+      </span>
+    );
+  }
+  let specie;
+  if (selectedCharacter.species === "Human") {
+    specie = (
+      <span>
+        Humano <RxAvatar />
+      </span>
+    );
+  } else {
+    specie = (
+      <span>
+        Alien <PiAlienFill />
+      </span>
+    );
   }
 
   return (
@@ -51,17 +77,14 @@ function CharacterDetails({ characters }) {
               <b>Estado</b>: {status}
             </p>
             <p>
-              <b>Especie</b>:{" "}
-              {selectedCharacter.species === "Alien" ? (
-                <PiAlienFill />
-              ) : (
-                <RxAvatar />
-              )}
+              <b>Especie</b>: {specie}
             </p>
             <p>
               <b>Origen</b>:{" "}
               {selectedCharacter.planet === "unknown" ? (
-                <GrStatusUnknown />
+                <span>
+                  Desconocido <GrStatusUnknown />
+                </span>
               ) : (
                 selectedCharacter.planet
               )}

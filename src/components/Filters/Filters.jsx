@@ -9,8 +9,11 @@ function Filters({
   onChangeInputName,
   filterName,
   onChangeInputSpecie,
+  filterSpecie,
   onClickReset,
   onChangeInputStatus,
+
+  filterStatus,
 }) {
   return (
     <form className="filters">
@@ -22,9 +25,15 @@ function Filters({
           filterName={filterName}
         />
       </div>
-      <FilterBySpecie onChangeInputSpecie={onChangeInputSpecie} />
+      <FilterBySpecie
+        onChangeInputSpecie={onChangeInputSpecie}
+        filterSpecie={filterSpecie}
+      />
 
-      <FilterByStatus onChangeInputStatus={onChangeInputStatus} />
+      <FilterByStatus
+        onChangeInputStatus={onChangeInputStatus}
+        filterStatus={filterStatus}
+      />
     </form>
   );
 }
@@ -35,6 +44,8 @@ Filters.propTypes = {
   onChangeInputName: PropTypes.func.isRequired,
   filterName: PropTypes.string.isRequired,
   onChangeInputSpecie: PropTypes.func.isRequired,
+  filterSpecie: PropTypes.string.isRequired,
   onClickReset: PropTypes.func.isRequired,
   onChangeInputStatus: PropTypes.func.isRequired,
+  filterStatus: PropTypes.string.isRequired,
 };

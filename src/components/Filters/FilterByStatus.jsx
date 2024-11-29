@@ -4,7 +4,7 @@ import { FaHeartPulse } from "react-icons/fa6";
 import { FaSkullCrossbones } from "react-icons/fa";
 import { GrStatusUnknown } from "react-icons/gr";
 
-function FilterByStatus({ onChangeInputStatus }) {
+function FilterByStatus({ onChangeInputStatus, filterStatus }) {
   const handleChange = (event) => {
     onChangeInputStatus(event.target.value);
   };
@@ -19,6 +19,7 @@ function FilterByStatus({ onChangeInputStatus }) {
             id="alive"
             name="status"
             value="Alive"
+            checked={filterStatus === "Alive"}
             onChange={handleChange}
           />
         </label>
@@ -30,6 +31,7 @@ function FilterByStatus({ onChangeInputStatus }) {
             id="dead"
             name="status"
             value="Dead"
+            checked={filterStatus === "Deade"}
             onChange={handleChange}
           />
         </label>
@@ -41,6 +43,7 @@ function FilterByStatus({ onChangeInputStatus }) {
             id="unknown"
             name="status"
             value="unknown"
+            checked={filterStatus === "unknown"}
             onChange={handleChange}
           />
         </label>
@@ -52,4 +55,5 @@ function FilterByStatus({ onChangeInputStatus }) {
 export default FilterByStatus;
 FilterByStatus.propTypes = {
   onChangeInputStatus: PropTypes.func.isRequired,
+  filterStatus: PropTypes.string.isRequired,
 };

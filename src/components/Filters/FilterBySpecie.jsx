@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { PiAlienFill } from "react-icons/pi";
 import { RxAvatar } from "react-icons/rx";
 
-function FilterBySpecie({ onChangeInputSpecie }) {
+function FilterBySpecie({ onChangeInputSpecie, filterSpecie }) {
   const handleChange = (event) => {
     onChangeInputSpecie(event.target.value);
   };
@@ -18,6 +18,7 @@ function FilterBySpecie({ onChangeInputSpecie }) {
             id="human"
             name="specie"
             value="Human"
+            checked={filterSpecie === "Human"}
             onChange={handleChange}
           />
         </label>
@@ -29,6 +30,7 @@ function FilterBySpecie({ onChangeInputSpecie }) {
             id="alien"
             name="specie"
             value="Alien"
+            checked={filterSpecie === "Alien"}
             onChange={handleChange}
           />
         </label>
@@ -41,4 +43,5 @@ export default FilterBySpecie;
 
 FilterBySpecie.propTypes = {
   onChangeInputSpecie: PropTypes.func.isRequired,
+  filterSpecie: PropTypes.string.isRequired,
 };

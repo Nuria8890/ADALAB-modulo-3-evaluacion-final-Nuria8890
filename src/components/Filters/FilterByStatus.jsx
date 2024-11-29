@@ -9,9 +9,9 @@ function FilterByStatus({ onChangeInputStatus }) {
     onChangeInputStatus(event.target.value);
   };
   return (
-    <div className="filters__bySpecie">
+    <div className="filters__bySpecie-Status">
       <h4>Estado</h4>
-      <div className="filters__bySpecie__inputs">
+      <div className="filters__bySpecie-Status__inputs">
         <label>
           <FaHeartPulse /> Vivo{" "}
           <input

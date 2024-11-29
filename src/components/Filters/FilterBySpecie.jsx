@@ -8,9 +8,9 @@ function FilterBySpecie({ onChangeInputSpecie }) {
     onChangeInputSpecie(event.target.value);
   };
   return (
-    <div className="filters__bySpecie">
+    <div className="filters__bySpecie-Status">
       <h4>Especie</h4>
-      <div className="filters__bySpecie__inputs">
+      <div className="filters__bySpecie-Status__inputs">
         <label>
           <RxAvatar /> Humano{" "}
           <input

@@ -1,4 +1,4 @@
-import "../styles/layout/NotFoundCharacter.scss";
+import "../styles/layout/NotFound.scss";
 import "../styles/layout/ResetButton.scss";
 import PropTypes from "prop-types";
 
@@ -25,7 +25,7 @@ function NotFoundParagraph({
   if (characters === 0) {
     return (
       <>
-        <p className="notFoundCharacter__text">
+        <p className="notFound__text">
           No hay ningún personaje que coincida con {filterName} {filterSpecie}{" "}
           {filterStatus}
         </p>

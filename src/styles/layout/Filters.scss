@@ -1,3 +1,5 @@
+@import "../core/variables";
+
 .filters {
   display: flex;
   flex-direction: column;
@@ -28,14 +30,14 @@
   &__byName {
     color: white;
     background-color: black;
-    border: 2px solid #07b0c7;
+    border: 2px solid $color-blue;
     padding: 5px;
   }
   &__bySpecie-Status {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px dotted #07b0c7;
+    border: 1px dotted $color-blue;
     padding: 5px;
     h4 {
       margin-bottom: 5px;

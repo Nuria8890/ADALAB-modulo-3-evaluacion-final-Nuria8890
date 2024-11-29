@@ -1,3 +1,5 @@
+@import "../core/variables";
+
 .details__p {
   display: flex;
   justify-content: center;
@@ -10,7 +12,7 @@
   width: 100%;
 }
 .details {
-  background-color: #07b0c7;
+  background-color: $color-blue;
   padding: 20px;
   display: flex;
   align-items: center;

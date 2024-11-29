@@ -1,6 +1,8 @@
+@import "../core/variables";
+
 .buttonReset {
   padding: 8px;
   border-radius: 5px;
-  background-color: #07b0c7;
+  background-color: $color-blue;
   font-weight: 800;
 }

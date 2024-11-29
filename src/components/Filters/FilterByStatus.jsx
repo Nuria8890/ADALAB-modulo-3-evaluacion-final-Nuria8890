@@ -31,7 +31,7 @@ function FilterByStatus({ onChangeInputStatus, filterStatus }) {
             id="dead"
             name="status"
             value="Dead"
-            checked={filterStatus === "Deade"}
+            checked={filterStatus === "Dead"}
             onChange={handleChange}
           />
         </label>

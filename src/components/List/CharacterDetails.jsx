@@ -9,7 +9,6 @@ import { GrStatusUnknown } from "react-icons/gr";
 import NotFoundCharacter from "../NotFoundCharacter";
 
 function CharacterDetails({ characters }) {
-  // ¿¿Esta lógica la hago aquí??
   const { idCharacter } = useParams();
 
   const selectedCharacter = characters.find((character) => {
@@ -20,7 +19,6 @@ function CharacterDetails({ characters }) {
     return <NotFoundCharacter />;
   }
 
-  // ¿¿Esta lógica la hago aquí??
   let status;
 
   if (selectedCharacter.status === "Dead") {

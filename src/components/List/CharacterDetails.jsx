@@ -44,7 +44,7 @@ function CharacterDetails({ characters }) {
           <div className="details__text">
             <h3>{selectedCharacter.name}</h3>
             <p>
-              <b>Status</b>:{status}
+              <b>Status</b>: {status}
             </p>
             <p>
               <b>Species</b>:{" "}

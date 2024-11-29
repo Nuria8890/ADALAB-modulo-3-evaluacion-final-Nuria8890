@@ -94,6 +94,8 @@ function App() {
                 <NotFoundParagraph
                   characters={filteredCharacters.length}
                   filterName={filterName}
+                  filterSpecie={filterSpecie}
+                  filterStatus={filterStatus}
                   onClickReset={clickReset}
                 />
               </>

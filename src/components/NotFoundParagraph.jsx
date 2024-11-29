@@ -2,12 +2,32 @@ import "../styles/layout/NotFoundCharacter.scss";
 import "../styles/layout/ResetButton.scss";
 import PropTypes from "prop-types";
 
-function NotFoundParagraph({ characters, filterName }) {
+function NotFoundParagraph({
+  characters,
+  filterName,
+  filterSpecie,
+  filterStatus,
+}) {
+  if (filterSpecie === "Human") {
+    filterSpecie = "humano";
+  } else if (filterSpecie === "Alien") {
+    filterSpecie = "alien";
+  }
+
+  if (filterStatus === "Alive") {
+    filterStatus = "vivo";
+  } else if (filterStatus === "Dead") {
+    filterStatus = "muerto";
+  } else if (filterStatus === "unknown") {
+    filterStatus = "desconocido";
+  }
+
   if (characters === 0) {
     return (
       <>
         <p className="notFoundCharacter__text">
-          No hay ningún personaje que coincida con la palabra {filterName}
+          No hay ningún personaje que coincida con {filterName} {filterSpecie}{" "}
+          {filterStatus}
         </p>
       </>
     );
@@ -19,4 +39,6 @@ export default NotFoundParagraph;
 NotFoundParagraph.propTypes = {
   characters: PropTypes.number.isRequired,
   filterName: PropTypes.string.isRequired,
+  filterSpecie: PropTypes.string,
+  filterStatus: PropTypes.string.isRequired,
 };

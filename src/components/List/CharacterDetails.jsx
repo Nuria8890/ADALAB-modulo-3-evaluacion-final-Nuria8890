@@ -44,10 +44,10 @@ function CharacterDetails({ characters }) {
           <div className="details__text">
             <h3>{selectedCharacter.name}</h3>
             <p>
-              <b>Status</b>: {status}
+              <b>Estado</b>: {status}
             </p>
             <p>
-              <b>Species</b>:{" "}
+              <b>Especie</b>:{" "}
               {selectedCharacter.species === "Alien" ? (
                 <PiAlienFill />
               ) : (
@@ -55,7 +55,7 @@ function CharacterDetails({ characters }) {
               )}
             </p>
             <p>
-              <b>Origin</b>:{" "}
+              <b>Origen</b>:{" "}
               {selectedCharacter.planet === "unknown" ? (
                 <GrStatusUnknown />
               ) : (
@@ -63,7 +63,7 @@ function CharacterDetails({ characters }) {
               )}
             </p>
             <p>
-              <b>Episodies</b>: {selectedCharacter.episodies}
+              <b>Episodios</b>: {selectedCharacter.episodies}
             </p>
           </div>
         </div>

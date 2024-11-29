@@ -7,6 +7,7 @@ import Header from "./Header";
 import Filters from "./Filters/Filters";
 import CharacterList from "./List/CharacterList";
 import CharacterDetails from "./List/CharacterDetails";
+import Footer from "./Footer";
 import NotFoundCharacter from "./NotFoundCharacter";
 import NotFoundParagraph from "./NotFoundParagraph";
 
@@ -14,7 +15,7 @@ function App() {
   // States
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState(
-    localStorage.get("searchName", ""),
+    localStorage.get("searchName", "")
   );
   const [filterSpecie, setFilterSpecie] = useState("");
   const [filterStatus, setFilterStatus] = useState("");
@@ -112,6 +113,7 @@ function App() {
           <Route path="*" element={<NotFoundCharacter />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }

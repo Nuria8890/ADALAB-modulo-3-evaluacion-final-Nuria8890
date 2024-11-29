@@ -1,0 +1,8 @@
+.footer {
+  display: flex;
+  justify-content: flex-start;
+  &__logo {
+    width: 100px;
+    margin-left: 20px;
+  }
+}

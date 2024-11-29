@@ -11,11 +11,17 @@ import NotFoundCharacter from "../NotFoundCharacter";
 function CharacterDetails({ characters }) {
   const { idCharacter } = useParams();
 
+  const isANumber = isNaN(idCharacter) === false;
+
   const selectedCharacter = characters.find((character) => {
     return character.id === parseInt(idCharacter);
   });
 
-  if (selectedCharacter === undefined) {
+  if (!isANumber) {
+    return <NotFoundCharacter />;
+  }
+
+  if (!selectedCharacter) {
     return <NotFoundCharacter />;
   }
 

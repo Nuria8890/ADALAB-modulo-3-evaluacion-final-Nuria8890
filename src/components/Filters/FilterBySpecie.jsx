@@ -18,7 +18,7 @@ function FilterBySpecie({ onChangeInputSpecie, filterSpecie }) {
             id="human"
             name="specie"
             value="Human"
-            checked={filterSpecie === "Human"}
+            checked={filterSpecie == "Human"}
             onChange={handleChange}
           />
         </label>
@@ -30,7 +30,7 @@ function FilterBySpecie({ onChangeInputSpecie, filterSpecie }) {
             id="alien"
             name="specie"
             value="Alien"
-            checked={filterSpecie === "Alien"}
+            checked={filterSpecie == "Alien"}
             onChange={handleChange}
           />
         </label>

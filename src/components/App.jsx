@@ -17,8 +17,12 @@ function App() {
   const [filterName, setFilterName] = useState(
     localStorage.get("searchName", "")
   );
-  const [filterSpecie, setFilterSpecie] = useState("");
-  const [filterStatus, setFilterStatus] = useState("");
+  const [filterSpecie, setFilterSpecie] = useState(
+    localStorage.get("filterSpecie", "")
+  );
+  const [filterStatus, setFilterStatus] = useState(
+    localStorage.get("filterStatus", "")
+  );
 
   // Events
   const changeInputNameValue = (value) => {
@@ -72,8 +76,10 @@ function App() {
   useEffect(() => {
     if (filteredCharacters.length > 0) {
       localStorage.set("searchName", filterName);
+      localStorage.set("filterSpecie", filterSpecie);
+      localStorage.set("filterStatus", filterStatus);
     }
-  }, [filterName, filteredCharacters]);
+  }, [filterName, filterSpecie, filterStatus, filteredCharacters]);
 
   return (
     <>
